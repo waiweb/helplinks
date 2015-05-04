@@ -1,0 +1,97 @@
+1) Serverfalle
+
+Falls in WAI beim Anlegen eines neuen Projektes die spezifischen Funktionen
+nicht referenziert werden können, kann es daran liegen dass der Tomcat server nicht
+mit initalisiert wurde:
+
+Testen über:
+
+PROJECT -> Properties -> Targeted Runtimes
+
+dort muss eine checkbox gesetzt sein beim "Apache Tomcat vX.X" -> falls diese nicht vorhanden ist, 
+so muss er neu initialisert werden.
+
+
+Dies passiert über 
+
+File -> New -> Other -> "Server" (am besten suchen) -> NEXT -> Apache -> Tomcat v8.0 Server auswählen
+Browse ->  C -> Programme -> Apache Software Foundation -> apache-tomcat-X.X.X den Ordner auswählen
+
+done
+
+
+
+
+
+
+
+
+2) Projekt richtig importieren
+
+Um ein Projekt in Eclipse zu öffnen, das schon existiert:
+
+
+File -> Import -> General -> Existing Projects -> Ordner auswählen
+
+
+
+
+
+
+
+3) Anmeldedaten richtig konfigurieren
+
+
+
+Um die Anmeldedaten zu ändern:
+
+WebContent -> META - INF -> context.xml -> url  / username / password
+
+ --------- Username             Passwort        Datenbank        ----------
+ --------- ss15-gruppe14	Ako2Raf9	ss15-gruppe14_DB ----------
+
+In diesem xml file können auch maxActiev und maxIdle gewählt werden
+
+
+
+4) Datenbanken richtig kreeieren
+
+Weiterer Fehler:
+
+-> Noch keine datenbank kreeiert ! 
+-> Über PgAdmin Datenbank anlegen
+
+5) Java Build Path Fehler
+
+
+Falls Java Runtime Fehler (nicht gefundene Path) etc. 
+Projekt im linken Fenster rechtsklick -> Properties -> Java Build Path -> Libraries -> JRE System Library -> edit -> Workspace default JRE SETZEN!
+
+6) PgAdmin:
+ 
+   Host: Nur IP-Adresse (
+   Bentuzername: ss15-gruppe14
+   PW: Ako2Raf9	
+
+7) SQL-Statement in PgADmin ausführen
+   In oberere Zeile auf "SQL" Button drücken
+
+
+8)
+TAGS:
+in der jsp über <%@ taglib prefix="my" uri="/WEB-INF/taglib/example.tld" %>
+		    prefix = Hierrüber greife ich im skript darauf zu	 uri= Hier finde ich die tags
+                    
+Um dann im Skript weitere darauf zugreifen zu können:
+
+<my:FUNCTION 
+
+
+
+in der .tld -> TAG -> name -> der name mit dem ich im jsp darauf zugreife
+in der .tld -> TAG -> tag-class -> name der Klasse (! mit src -> "überbuild" jsp2.CLASSNAME) 
+
+
+Fragen:
+
+Für was benötigt man bei <jsp:useBane id = table <- die id ? und den scope ? >
